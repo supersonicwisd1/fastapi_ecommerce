@@ -10,18 +10,27 @@ import jwt
 
 config_credentials = dotenv_values(".env")
 
-conf = ConnectionConfig(
-    MAIL_USERNAME= config_credentials["EMAIL"],
-    MAIL_PASSWORD= config_credentials["PASS"],
-    MAIL_FROM= config_credentials["EMAIL"],
-    MAIL_PORT= 587,
-    MAIL_SERVER= "smtp.gmail.com",
-    MAIL_TLS = True,
-    MAIL_SSL = False,
-    USE_CREDENTIALS = True,
-    # VALIDATE_CERTS = False
-)
+# conf = ConnectionConfig(
+#     MAIL_USERNAME= config_credentials["EMAIL"],
+#     MAIL_PASSWORD= config_credentials["PASS"],
+#     MAIL_FROM= config_credentials["EMAIL"],
+#     MAIL_PORT= 587,
+#     MAIL_SERVER= "smtp.gmail.com",
+#     MAIL_TLS = True,
+#     MAIL_SSL = False,
+#     USE_CREDENTIALS = True,
+#     # VALIDATE_CERTS = False
+# )
 
+conf = ConnectionConfig(
+    MAIL_USERNAME='your_email@example.com',
+    MAIL_PASSWORD='your_email_password',
+    MAIL_SERVER='smtp.gmail.com',
+    MAIL_PORT=587,
+    MAIL_FROM='your_email@example.com',
+    MAIL_STARTTLS=True,
+    MAIL_SSL_TLS=False,
+)
 
 # class EmailSchema(BaseModel):
 #     email: List[EmailStr]
